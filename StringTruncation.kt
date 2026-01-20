@@ -36,7 +36,7 @@ fun truncate(s:String,k:Int):String{
             sb.append(" ")
         }else{
         	if(sb.isNotEmpty()){
-            	sb.deleteCharAt(sb.length-1) //remove extra space before adding ...
+            	sb.deleteCharAt(sb.length-1) //remove extra space before append  ...
 	    		sb.append("...")
 			    println(sb.toString())
           	}

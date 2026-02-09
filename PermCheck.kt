@@ -31,7 +31,7 @@
 //each element of array A is an integer within the range [1..1,000,000,000].
 
 fun solution(A: IntArray): Int {
-    if(A.size==1) return 0
+    if(A.size==1) return if(A[0]==1) 1 else 0 
     A.sort()
 
     for( i in A.indices){

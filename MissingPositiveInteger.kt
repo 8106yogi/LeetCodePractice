@@ -27,9 +27,9 @@
 //}
 
 fun solution(A: IntArray): Int {
-    var sum = 0
+    var sum = 0.0
     for(n in A){
         sum += n
     }
-    return ((A.size + 1)*(A.size + 2))/2 - sum
+    return (((A.size + 1).toDouble()*(A.size + 2))/2 - sum).toInt()
 }

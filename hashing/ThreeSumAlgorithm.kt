@@ -15,16 +15,17 @@
 
 class Solution {
     fun threeSum(nums: IntArray): List<List<Int>> {
-    val ansSet=mutableSetOf<List<Int>>()
-    for(i in nums.indices){
-        val set = mutableSetOf<Int>()
-        for(j in i+1..nums.size-1){
-            if( set.contains(-(nums[i]+nums[j]))){
-                ansSet.add(listOf<Int>(nums[i],nums[j],-(nums[i]+nums[j])).sorted())
-            }            
-            set.add(nums[j])
+        val ansSet= mutableSetOf<List<Int>>()
+
+        for(i in nums.indices){
+            val set=mutableSetOf<Int>()
+            for(j in i+1..nums.size-1){
+                if(set.contains(-(nums[i]+nums[j]))){
+                    ansSet.add(listOf<Int>(nums[i],nums[j],-(nums[i]+nums[j])).sorted())
+                }
+                set.add(nums[j])                
+            }
         }
+    return ansSet.toList()
     }
-    return ansSet.toList() 
-  }
 }

@@ -15,13 +15,21 @@
  // A[3] = 5
 //the function should return 4, as it is the missing element.
 
+//fun solution(A: IntArray): Int {
+//    if(A.size==0)return 1
+//    A.sort()
+//    var i=1
+//    for(n in A){
+//        if(i!=n) return i
+//        i++
+//    }
+//    return i
+//}
+
 fun solution(A: IntArray): Int {
-    if(A.size==0)return 1
-    A.sort()
-    var i=1
+    var sum = 0
     for(n in A){
-        if(i!=n) return i
-        i++
+        sum += n
     }
-    return i
+    return ((A.size + 1)*(A.size + 2))/2 - sum
 }

@@ -7,18 +7,15 @@
 //Assume that: N and K are integers within the range [0..100];  each element of array A is an integer within the range [−1,000..1,000].
 
 fun solution(A: IntArray, K: Int): IntArray {
-if(A.size==0||A.size==1||A.size==K)return A
-var k=K
-k= K%A.size
-val arr=IntArray(A.size)
+    if(A.size<=1||A.size==K) return A
+    var k=K%A.size
+    val newA= IntArray(A.size)
     for(i in A.indices){
-        var j=0
-        if(i+k<A.size){
-            j = i + k
-        }else{
-             j= i+k - A.size
+        var j=i+k
+        if(j>A.size-1){
+            j= j-A.size
         }
-        arr[j]= A[i]
+        newA[j]=A[i]
     }
-return arr
+    return newA
 }

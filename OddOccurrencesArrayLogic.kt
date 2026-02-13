@@ -26,17 +26,15 @@
 //33 7 99 99 //ANS : 7
 
 fun solution(A: IntArray): Int {
+    // Implement your solution here
     if(A.size==1) return A[0]
-    A.sort()
-    var lastN=0
+    A.sort()    
+    var lastNum=0
     for(i in A.indices){
-        if(i%2==0){
-            lastN=A[i]            
-        }else{
-            if(A[i]!=lastN){
-                return lastN
-            }
+        if(i%2!=0){
+            if(lastNum!=A[i])return lastNum
         }
+        lastNum =A[i]
     }
-    return lastN
+    return lastNum
 }

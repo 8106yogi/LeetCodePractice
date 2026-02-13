@@ -35,3 +35,17 @@ class Solution {
         return listA.toIntArray()
     }
 }
+
+//class Solution {
+//    fun nextGreaterElement(nums1: IntArray, nums2: IntArray): IntArray {
+//        val set= nums2.toSet()
+//        val aL= mutableListOf<Int>()
+//        for(n in nums1){
+//           var index =   set.indexOf(n)
+ //           while(index<set.size && set.elementAt(index)<=n ) index++
+ //           if(index==set.size) aL.add(-1)
+ //           else aL.add(set.elementAt(index))
+ //       }
+ //       return aL.toIntArray()        
+ //   }
+//}

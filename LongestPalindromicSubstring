@@ -1,0 +1,27 @@
+//5. Longest Palindromic Substring; Given a string s, return the longest palindromic substring in s.
+//Example 1: Input: s = "babad"   Output: "bab"  Explanation: "aba" is also a valid answer.
+//Example 2:  Input: s = "cbbd"  Output: "bb"
+//Constraints:  1 <= s.length <= 1000
+
+class Solution {
+    fun longestPalindrome(s: String): String {
+        if(s.length==1)return s
+        val sb=StringBuilder()
+        var temp=""
+        for(i in s.indices){
+            sb.clear()
+            for(j in i..s.length-1){
+                sb.append(s[j])
+                if(sb.length>=temp.length)
+                if(isPalindrom(sb.toString())&& sb.length>temp.length){
+                    temp=sb.toString()
+                }      
+            }
+        }
+        return temp
+    }
+
+    fun isPalindrom(s:String):Boolean{
+        return    s==s.reversed()
+    }
+}

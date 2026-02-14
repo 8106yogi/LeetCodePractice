@@ -36,17 +36,17 @@
 fun solution(X: Int, A: IntArray): Int {
     val set = mutableSetOf<Int>()
     var max=0
-    for(i in A.indices){
-        if(A[i]<=X){
-            if(set.add(A[i])){
-                max = maxOf(max,i)    
+    for(i in A.indices){ //we will try to add every item in array
+        if(A[i]<=X){    // we will add only items those are in range of 1..X
+            if(set.add(A[i])){ // we will check if the value addes i.e the first occurance of visible number 
+                max = maxOf(max,i)      // if the values adds  check the timestamp of that value,  get max value of find if all number  are visible till x, we will return it after make sure all values are present in set till x.
             }   
-        }
+        } 
     }
     for(n  in 1..X){
         if(!set.contains(n)){
-            return -1
+            return -1  //check if all values from 1..X are in set if not return -1
         }
     }
-    return max
+    return max  // if all values 1..x are present in set, then return the last visible number/leaf to cross
 }

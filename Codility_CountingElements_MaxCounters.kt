@@ -20,10 +20,32 @@ fun solution(N: Int, A: IntArray): IntArray {
         }
         else{
             if(arr.maxOrNull()?:0>max){
-                max=arr.maxOrNull()?:0
+                max=arr.maxOrNull()?:0 //  methoed to get maximum value of an array
                 arr.fill(max?:0) // method to fill all values of Array //get max value from array
             }
         }
     }
     return arr
-}
+} // O(N * M)
+
+fun solution(N: Int, A: IntArray): IntArray {
+    val counter = IntArray(N)
+    var currentMax=0
+    var baseMax = 0
+    for(n in A){
+        if(n in 1..N){
+            var index= n-1
+          if(counter[index]<baseMax)
+                counter[index]=baseMax
+            counter[index]++
+            currentMax= maxOf(currentMax, counter[index] )
+        }else{
+            baseMax=currentMax
+        }
+    }
+    for(i in counter.indices){     // Final pass to update remaining counters
+        if(counter[i]<baseMax)
+            counter[i]=baseMax
+    }
+    return counter
+} //O(N+M)

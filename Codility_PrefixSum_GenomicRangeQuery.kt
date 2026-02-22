@@ -21,3 +21,41 @@ fun getMinVal(S:String, s:Int, e:Int):Int{
     val sub= S.substring(s,e+1).toCharArray().sorted()
     return GNOM.indexOf(sub[0])+1
 }
+
+
+
+fun solution(S: String, P: IntArray, Q: IntArray): IntArray {
+    // Implement your solution here
+    val aArr= IntArray(S.length+1)
+    val cArr= IntArray(S.length+1)
+    val gArr= IntArray(S.length+1)
+    var aCount=0
+    var cCount=0
+    var gCount=0
+    for(i in S.indices){
+        when(S[i])
+        {
+            'A' -> aCount++           
+            'C' -> cCount++   
+            'G' -> gCount++   
+        }
+        aArr[i+1]= aCount
+        cArr[i+1]= cCount
+        gArr[i+1]= gCount
+    }
+        //  println(aArr.joinToString())
+        //  println(cArr.joinToString()) 
+        //  println(gArr.joinToString()) 
+
+    val ansArray= IntArray(P.size){-1}
+    //  println(ansArray.joinToString("    :    ")) // -1    :    -1    :    -1
+    for(i in P.indices){
+        if(aArr[Q[i]+1]- aArr[P[i]]>0)    ansArray[i]=1
+        else if(cArr[Q[i]+1]- cArr[P[i]]>0)   ansArray[i]=2  
+        else if(gArr[Q[i]+1]- gArr[P[i]]>0)   ansArray[i]=3  
+        else ansArray[i]=4
+    }
+    return ansArray
+}
+
+

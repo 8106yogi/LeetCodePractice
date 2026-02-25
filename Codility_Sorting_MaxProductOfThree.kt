@@ -15,4 +15,4 @@ fun solution(A: IntArray): Int {
         }
     }
     return max
-}
+}  //ON3

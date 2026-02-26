@@ -16,3 +16,14 @@ fun solution(A: IntArray): Int {
     }
     return max
 }  //ON3
+
+
+
+fun solution(A: IntArray): Int {
+    // Implement your solution here
+    A.sort()
+    val n=A.size
+    val op1=  A[n-1]*A[n-2]*A[n-3]
+    val op2=  A[0]*A[1]*A[n-1]
+    return maxOf(op1,op2)
+} //O(N * log(N))

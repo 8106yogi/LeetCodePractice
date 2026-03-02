@@ -26,4 +26,17 @@ return 0
 fun isTrinangle(p:Int,q:Int, r:Int):Boolean{
     if(p+q>r && q+r>p && r+p>q) return true
     else return false
-}
+} // O(N3)
+
+
+
+fun solution(A: IntArray): Int {
+    A.sort()
+    for( i in 0..A.size-3){
+        val p=A[i].toLong()
+        val q=A[i+1].toLong()
+        val r=A[i+2].toLong()
+        if(p+q>r) return 1
+    }
+    return 0
+} // O(NLogN)

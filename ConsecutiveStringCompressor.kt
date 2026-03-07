@@ -1,9 +1,3 @@
-fun main() {
-    val s = stringCompressor("abbcceccda")
-    println(s)
-}
-
-fun stringCompressor(input: String): String {
     // Given a String, compress it by replacing repeated consecutive letters
     // with the letter followed by the number of repetitions.
     //
@@ -16,6 +10,12 @@ fun stringCompressor(input: String): String {
     // "aaabbcddd"  -> "a3b2c1d3"
     // "aaabbcddda" -> "a3b2c1d3a1"
 
+fun main() {
+    val s = stringCompressor("abbcceccda")
+    println(s)
+}
+
+fun stringCompressor(input: String): String {
     if (input.isEmpty()) return ""
 
     var lastLetter = input[0]

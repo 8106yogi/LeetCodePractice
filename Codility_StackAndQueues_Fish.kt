@@ -20,5 +20,5 @@ fun solution(A: IntArray, B: IntArray): Int {
         }
 
     }
-
 }
+

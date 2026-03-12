@@ -40,3 +40,5 @@ fun solution(A: IntArray): Int {
     }
     return 0
 } // O(NLogN)
+
+

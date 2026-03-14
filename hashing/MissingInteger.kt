@@ -20,5 +20,6 @@ fun solution(A: IntArray): Int {
     return set.size+1
 }
 
+
 //Detected time complexity:
 //O(N) or O(N * log(N))

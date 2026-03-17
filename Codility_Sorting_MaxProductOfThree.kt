@@ -26,3 +26,5 @@ fun solution(A: IntArray): Int {
     val op2=  A[0]*A[1]*A[n-1] //for 2 negative numbers and 1 positive number
     return maxOf(op1,op2)
 } //O(N * log(N))
+
+

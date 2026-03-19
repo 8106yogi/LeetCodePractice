@@ -28,7 +28,6 @@
  *     var next: ListNode? = null
  * }
  */
-
 class Solution {
     fun mergeTwoLists(list1: ListNode?, list2: ListNode?): ListNode? {
         if (list1 == null)
@@ -53,7 +52,6 @@ class Solution {
             current = current?.next
         }
         current?.next = if (l1 == null) l2 else l1
-
         return dummy.next
     }
 }

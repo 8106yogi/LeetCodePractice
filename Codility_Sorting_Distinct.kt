@@ -7,3 +7,4 @@
 fun solution(A: IntArray): Int {
     return A.toSet().size
 } //Detected time complexity: O(N*log(N)) or O(N)
+
